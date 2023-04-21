@@ -1,27 +1,29 @@
 # HeroesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+If you want to try this app, you need to install [json-server](https://www.npmjs.com/package/json-server)  and run the following commands
 
-## Development server
+
+## Instructions
+
+### Backend
+
+Run `cd backend` to navigate to the folder where the db is ubicated.
+
+Run `json-server --watch db.json` to start the json server.
+
+Now if you go to `http://localhost:3000/users`, you'll get
+```
+[
+  {
+    "id": 1,
+    "usuario": "John Doe",
+    "email": "john.due@gmail.com"
+  }
+]
+```
+
+**If you have any problems following this instructions please visit [json-server](https://www.npmjs.com/package/json-server)**
+
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
