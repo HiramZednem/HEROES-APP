@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
 import { Hero } from '../interface/hero.interface';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { environments } from '../../../environments/environments';
 
 @Injectable({
@@ -30,4 +30,24 @@ export class HeroesService {
   getSuggestions( query: string ): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.baseUrl}/heroes?q=${ query }&_limit=6`)
   }
+
+  addHero ( hero: Hero ): Observable<Hero>{
+    return this.http.post<Hero>(`${ this.baseUrl }/heroes`, hero)
+  }
+
+  updateHero ( hero: Hero ): Observable<Hero>{
+    if ( !hero.id ) throw Error ('Hero id is required')
+    return this.http.patch<Hero>(`${ this.baseUrl }/heroes`, hero) //actualizar parcialmente el objeto, a diferencia de put que borra y remplaza a lo hard
+  }
+
+  deleteHeroById ( id: string ): Observable<boolean> {
+    return this.http.delete(`${ this.baseUrl }/heroes/${ id }`)
+      .pipe(
+        catchError( err => of( false ) ),
+        map( resp => true )
+      )
+  }
+
+
+
 }
