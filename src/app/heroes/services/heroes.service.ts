@@ -37,7 +37,7 @@ export class HeroesService {
 
   updateHero ( hero: Hero ): Observable<Hero>{
     if ( !hero.id ) throw Error ('Hero id is required')
-    return this.http.patch<Hero>(`${ this.baseUrl }/heroes`, hero) //actualizar parcialmente el objeto, a diferencia de put que borra y remplaza a lo hard
+    return this.http.patch<Hero>(`${ this.baseUrl }/heroes/${ hero.id }`, hero) //actualizar parcialmente el objeto, a diferencia de put que borra y remplaza a lo hard
   }
 
   deleteHeroById ( id: string ): Observable<boolean> {
