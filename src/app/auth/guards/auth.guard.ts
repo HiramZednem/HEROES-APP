@@ -1,6 +1,7 @@
 //Los guards son servicios, so tienen la misma estructura, la unica diferencia es que tinen que implementar
 //una interfaz
 //esta interfaz es dependiente de donde la quiero colocar, si cada que entre en una ruta, o cada vez que navegue, etc...
+//test commit
 
 import { Injectable } from '@angular/core';
 import {
