@@ -7,9 +7,8 @@ If you want to try this app, you need to install [json-server](https://www.npmjs
 
 ### Backend
 
-Run `cd backend` to navigate to the folder where the db is ubicated.
 
-Run `json-server --watch db.json` to start the json server.
+Run `npm run backend` to start the json server.
 
 Now if you go to `http://localhost:3000/users`, you'll get
 ```

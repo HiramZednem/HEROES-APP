@@ -91,7 +91,9 @@ export class NewPageComponent implements OnInit{
       if ( !result ) return;
       this.heroService.deleteHeroById( this.currentHero.id )
         .subscribe( wasDeleted => {
-          this.router.navigate(['/heroes'])
+          if ( wasDeleted ) {
+            this.router.navigate(['/heroes'])
+          }
         })
 
     });
