@@ -37,7 +37,7 @@ export class AuthGuard implements CanMatch, CanActivate {
   canMatch(route: Route, segments: UrlSegment[]): Observable<boolean> | boolean {
     console.log('Can Match');
     console.log({ route, segments });
-    return this.checkAuthStatus();
+    return this.checkAuthStatus(); //para que las vistas se muestren tengo que regresar un true
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {

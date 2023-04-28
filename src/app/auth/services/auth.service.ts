@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   checkAuthentication(): Observable<boolean> {
-    if ( !localStorage.getItem('token') ) return of(false);
+    if ( !localStorage.getItem('token') ) return of(false); //si no esta autenticado regreso falso
 
     //este token que esta aqui lo mandariamos al backend para que el lo revise y si es valido pues autorizamos el login,
     //caso contrario lo mandamos a volar
@@ -43,7 +43,7 @@ export class AuthService {
     return this.http.get<User>(`${this.baseUrl}/users/1`)
       .pipe(
         tap( user => this.user = user ),
-        map( user => !!user,
+        map( user => !!user, //aca estoy transformando a un boleano
           catchError(err => of(false)))
       )
   }
