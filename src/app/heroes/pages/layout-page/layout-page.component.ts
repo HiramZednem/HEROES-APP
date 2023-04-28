@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
   ]
 })
 export class LayoutPageComponent {
-
+  /*
+    Aqui pasa algo curioso, al inicializar un servicio en cualquier clase, este va a permanecer con sus valores hasta que la pagina se recargue y se pierdan esos datos
+  */
 
   public sidebarItems = [
     { label: 'Listado', icon: 'label', url: './list' },
